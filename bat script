@@ -1,0 +1,25 @@
+Below are the instrucitons I used to create a bat script for my meal plan project. 
+I added conda to the environment variabe using instructions here https://www.quora.com/Why-can-t-I-run-Python-in-CMD-but-can-in-Anaconda-Prompt
+I wrote a batch file that will activate the environment I created this script in, and import it, leaving the python interpreter open for me to call the functions
+
+from what I know the -i is responsible for keeping python going after execution, and -c passes the quoted text as a python instruciton 
+
+@ ECHO OFF keeps the instrucitons from printing to the screen as they're run,
+
+and CLS simply clears the screen for me 
+
+I use import * to get all functions and variables.
+I also added a get_syntax() function that just prints the syntax for the get_meals() function in case I need it.
+
+I also found that I could create a shortcut to the bat file on my desktop, change the icon by downloading an image and converting it to icon format
+and changing it in properties.
+
+The effect of all this is: I double click the icon, and cmd gets everything set up, so the next thing I need to do is simply
+call the function with whatever parameters I need that day.
+
+Here is the code:
+
+@ ECHO OFF
+CALL conda activate activate meal_plan1
+CLS
+CALL python -i -c "from get_meals import *"
